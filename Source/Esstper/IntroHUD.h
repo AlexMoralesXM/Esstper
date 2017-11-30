@@ -26,6 +26,9 @@ private:
 	// Widget Instance for the story widget template.
 	UUserWidget* StoryWidget;
 
+	// Text of the story widget.
+	FString StoryText;
+
 protected:
 	void BeginPlay() override;
 };

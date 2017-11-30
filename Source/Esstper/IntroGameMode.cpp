@@ -1,7 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "IntroGameMode.h"
-#include "IntroGameState.h"
+#include "IntroGameState.h" 
+#include "Runtime/Engine/Classes/Kismet/GameplayStatics.h"
 
 void AIntroGameMode::BeginPlay()
 {
@@ -47,6 +48,8 @@ void AIntroGameMode::UpdateStory()
 	{
 		//TODO: Move to next scene.
 		UE_LOG(LogTemp, Warning, TEXT("Ne-a ajuns."));
+		CurrentLine = "";
+		UGameplayStatics::OpenLevel(GetWorld(), "Demonstration");
 		return;
 	}
 

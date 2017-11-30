@@ -13,6 +13,8 @@ class AEsstperGameMode : public AGameModeBase
 
 public:
 	AEsstperGameMode();
+
+
 };
 
 

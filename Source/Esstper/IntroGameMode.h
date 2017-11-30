@@ -3,14 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/GameModeBase.h"
+#include "GameFramework/GameMode.h"
 #include "IntroGameMode.generated.h"
 
 /**
  * Holds the game mode information for the intro.
  */
 UCLASS()
-class ESSTPER_API AIntroGameMode : public AGameModeBase
+class ESSTPER_API AIntroGameMode : public AGameMode
 {
 	GENERATED_BODY()
 	

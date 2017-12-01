@@ -1,6 +1,8 @@
 // E
 
 #include "WizardCharacter.h"
+#include "GameFramework/CharacterMovementComponent.h"
+
 
 
 
@@ -14,6 +16,7 @@ void AWizardCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerIn
 
 void AWizardCharacter::Cast()
 {
+	GetCharacterMovement()->DisableMovement();
 	isCasting = true;
 }
 

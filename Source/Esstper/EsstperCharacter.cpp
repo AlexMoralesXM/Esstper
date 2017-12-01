@@ -71,9 +71,6 @@ void AEsstperCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerI
 	// handle touch devices
 	PlayerInputComponent->BindTouch(IE_Pressed, this, &AEsstperCharacter::TouchStarted);
 	PlayerInputComponent->BindTouch(IE_Released, this, &AEsstperCharacter::TouchStopped);
-
-	// VR headset functionality
-	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &AEsstperCharacter::OnResetVR);
 }
 
 

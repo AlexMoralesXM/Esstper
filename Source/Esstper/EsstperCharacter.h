@@ -35,10 +35,10 @@ protected:
 	void OnResetVR();
 
 	/** Called for forwards/backward input */
-	void MoveForward(float Value);
+	void virtual MoveForward(float Value);
 
 	/** Called for side to side input */
-	void MoveRight(float Value);
+	void virtual MoveRight(float Value);
 
 	/** 
 	 * Called via input to turn at a given rate. 

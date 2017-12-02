@@ -32,4 +32,6 @@ protected:
 
 	// Lateral movement for spell casting interruptions
 	void MoveRight(float Value) override;
+	
+	// TODO: Stop casting when jumping.
 };

@@ -28,7 +28,15 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Rune", meta = (AllowPrivateAccess = "true"))
 	UTextRenderComponent* RuneText;
 
+	// Rune's base Material
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Rune", meta = (AllowPrivateAccess = "true"))
+	UMaterialInterface* RuneBaseMaterial;
 
+private:
+	// Material Instance used on Rune.
+	UMaterialInstanceDynamic* RuneMaterial;
+
+protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
@@ -39,4 +47,7 @@ public:
 private:
 	// Rotates the text towards the player.
 	void UpdateTextRotation();
+
+	// Changes the glow of the rune
+	void ChangeRuneGlow(float Value);
 };

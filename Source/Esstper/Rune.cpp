@@ -25,6 +25,11 @@ void ARune::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	// Create the material for this instance.
+	RuneMaterial = UMaterialInstanceDynamic::Create(RuneBaseMaterial, this);
+
+	// Set the mesh's material to the created one.
+	RuneMesh->SetMaterial(0, RuneMaterial);
 }
 
 // Called every frame
@@ -35,6 +40,7 @@ void ARune::Tick(float DeltaTime)
 	UpdateTextRotation();
 }
 
+//Rotates the text mesh towards the player.
 void ARune::UpdateTextRotation()
 {
 	FVector PlayerLocation = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
@@ -48,5 +54,11 @@ void ARune::UpdateTextRotation()
 	FRotator TargetRotation = NormalVector.Rotation();
 	RuneText->SetWorldRotation(TargetRotation);
 
+}
+
+// Sets the rune glow to the value.
+void ARune::ChangeRuneGlow(float Value)
+{
+	RuneMaterial->SetScalarParameterValue(TEXT("Emission"), Value);
 }
 

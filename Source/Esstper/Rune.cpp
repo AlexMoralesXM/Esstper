@@ -30,6 +30,9 @@ void ARune::BeginPlay()
 
 	// Set the mesh's material to the created one.
 	RuneMesh->SetMaterial(0, RuneMaterial);
+
+	// Sets the standard glow.
+	ChangeRuneGlow(50.f);
 }
 
 // Called every frame

@@ -21,11 +21,18 @@ protected:
 	// Starts the casting for the player.
 	void Cast();
 
+	// Starts the sensing for the player.
+	void Sense();
+
 public:
 	// Is the player now casting?
 	UPROPERTY(BlueprintReadOnly, Category = "Casting")
 	bool isCasting;
-	
+
+	// Is the player now sensing?
+	UPROPERTY(BlueprintReadOnly, Category = "Casting")
+	bool isSensing;
+
 protected:
 	// Forward movement for spell casting interruptions
 	void MoveForward(float Value) override;
@@ -34,4 +41,9 @@ protected:
 	void MoveRight(float Value) override;
 	
 	// TODO: Stop casting when jumping.
+
+protected:
+	// Interrupt all animations.
+	UFUNCTION(BlueprintCallable, Category = "Casting")
+	void InterruptAnimations();
 };

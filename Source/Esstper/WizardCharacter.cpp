@@ -10,6 +10,9 @@ void AWizardCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerIn
 
 	// Binds the cast function.
 	PlayerInputComponent->BindAction("Cast", IE_Pressed, this, &AWizardCharacter::Cast);
+
+	//Binds the sense function.
+	PlayerInputComponent->BindAction("Sense", IE_Pressed, this, &AWizardCharacter::Sense);
 }
 
 void AWizardCharacter::Cast()
@@ -21,13 +24,24 @@ void AWizardCharacter::Cast()
 	isCasting = true;
 }
 
+void AWizardCharacter::Sense()
+{
+	// Stops the character movement.
+	GetCharacterMovement()->StopActiveMovement();
+
+	// Starts the sensing animation.
+	isSensing = true;
+}
+
 void AWizardCharacter::MoveForward(float Value)
 {
 	// Interrupts the spell cast on movement.
 	Super::MoveForward(Value);
 	
-	if(Value != 0.f)
-		isCasting = false;
+	if (Value != 0.f)
+	{
+		InterruptAnimations();
+	}
 }
 
 void AWizardCharacter::MoveRight(float Value)
@@ -36,7 +50,14 @@ void AWizardCharacter::MoveRight(float Value)
 	Super::MoveRight(Value);
 
 	if (Value != 0.f)
-		isCasting = false;
+	{
+		InterruptAnimations();
+	}
 }
 
+void AWizardCharacter::InterruptAnimations()
+{
+	isCasting = false;
+	isSensing = false;
+}
 

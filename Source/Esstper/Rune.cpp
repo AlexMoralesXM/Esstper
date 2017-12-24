@@ -28,6 +28,9 @@ void ARune::BeginPlay()
 	// Create the material for this instance.
 	RuneMaterial = UMaterialInstanceDynamic::Create(RuneBaseMaterial, this);
 
+	// Set the text above the runes.
+	RuneText->SetText(RuneName);
+
 	// Set the mesh's material to the created one.
 	RuneMesh->SetMaterial(0, RuneMaterial);
 

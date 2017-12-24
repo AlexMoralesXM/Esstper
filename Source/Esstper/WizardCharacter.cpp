@@ -60,6 +60,7 @@ void AWizardCharacter::StartShootBolt()
 void AWizardCharacter::CastBolt()
 {
 	ALightningBolt* boltSpawned = SpawnBolt();
+	//TODO: Set the target if any.
 	
 }
 
@@ -72,4 +73,10 @@ void AWizardCharacter::StartCastSense()
 
 	// Starts the sensing animation.
 	isSensing = true;
+}
+
+void AWizardCharacter::CastSenseSphere()
+{
+	ASenseSphere* sphereSpawned = SpawnSphere();
+
 }

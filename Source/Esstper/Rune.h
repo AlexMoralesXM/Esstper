@@ -20,6 +20,10 @@ public:
 	ARune();
 
 protected:
+	// Rune's Name
+	UPROPERTY(EditInstanceOnly, BlueprintReadOnly, Category = "Rune", meta = (AllowPrivateAccess = "true"))
+	FString RuneName = "Rune Name";
+
 	// Rune's Mesh
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Rune", meta = (AllowPrivateAccess = "true"))
 	UStaticMeshComponent* RuneMesh;

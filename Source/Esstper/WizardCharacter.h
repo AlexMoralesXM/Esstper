@@ -11,6 +11,7 @@
  */
 
 class ALightningBolt;
+class ASenseSphere;
 
 UCLASS()
 class ESSTPER_API AWizardCharacter : public AEsstperCharacter
@@ -66,7 +67,13 @@ protected:
 	// Starts the sensing for the player.
 	void StartCastSense();
 
+	// Casts the Sphere.
+	UFUNCTION(BlueprintCallable, Category = "AttackSpell")
+	void CastSenseSphere();
 
+	// Spawns the lightning bolt.
+	UFUNCTION(BlueprintImplementableEvent, Category = "AttackSpell")
+	ASenseSphere* SpawnSphere();
 
 
 

@@ -7,8 +7,11 @@
 #include "WizardCharacter.generated.h"
 
 /**
- * 
+ * Specific controller for the wizard.
  */
+
+class ALightningBolt;
+
 UCLASS()
 class ESSTPER_API AWizardCharacter : public AEsstperCharacter
 {
@@ -26,11 +29,11 @@ protected:
 
 public:
 	// Is the player now casting?
-	UPROPERTY(BlueprintReadOnly, Category = "Casting")
+	UPROPERTY(BlueprintReadOnly, Category = "AttackSpell")
 	bool isCasting;
 
 	// Is the player now sensing?
-	UPROPERTY(BlueprintReadOnly, Category = "Casting")
+	UPROPERTY(BlueprintReadOnly, Category = "SenseSpell")
 	bool isSensing;
 
 protected:
@@ -43,14 +46,14 @@ protected:
 	// TODO: Stop casting when jumping.
 
 protected:
-	UPROPERTY(BlueprintReadWrite, Category = "Casting")
-		TSubclassOf<class 
-
 	// Interrupt all animations.
 	UFUNCTION(BlueprintCallable, Category = "Casting")
 	void InterruptAnimations();
 
+	UFUNCTION(BlueprintCallable, Category = "AttackSpell")
+	void CastBolt();
+
 	// Spawns the lightning bolt.
-	UPROPERTY(EditDefaultsOnly, Category = "Casting")
-	void SpawnBolt();
+	UFUNCTION(BlueprintImplementableEvent, Category = "AttackSpell")
+	ALightningBolt* SpawnBolt();
 };

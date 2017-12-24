@@ -2,6 +2,7 @@
 
 #include "WizardCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "LightningBolt.h"
 
 void AWizardCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {
@@ -61,8 +62,9 @@ void AWizardCharacter::InterruptAnimations()
 	isSensing = false;
 }
 
-void AWizardCharacter::SpawnBolt()
+void AWizardCharacter::CastBolt()
 {
-
+	ALightningBolt* boltSpawned = SpawnBolt();
+	
 }
 

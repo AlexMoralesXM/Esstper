@@ -43,7 +43,14 @@ protected:
 	// TODO: Stop casting when jumping.
 
 protected:
+	UPROPERTY(BlueprintReadWrite, Category = "Casting")
+		TSubclassOf<class 
+
 	// Interrupt all animations.
 	UFUNCTION(BlueprintCallable, Category = "Casting")
 	void InterruptAnimations();
+
+	// Spawns the lightning bolt.
+	UPROPERTY(EditDefaultsOnly, Category = "Casting")
+	void SpawnBolt();
 };

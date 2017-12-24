@@ -61,3 +61,8 @@ void AWizardCharacter::InterruptAnimations()
 	isSensing = false;
 }
 
+void AWizardCharacter::SpawnBolt()
+{
+
+}
+

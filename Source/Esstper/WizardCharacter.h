@@ -31,9 +31,10 @@ protected:
 
 	// TODO: Stop casting when jumping.
 
+public:
 	// Interrupt all animations.
 	UFUNCTION(BlueprintCallable, Category = "Casting")
-		void InterruptCasts();
+	void InterruptCasts();
 
 //////////////////// Lightning Bolt Casting ////////////////////
 

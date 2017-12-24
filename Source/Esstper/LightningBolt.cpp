@@ -18,17 +18,20 @@ void ALightningBolt::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	FVector CurrentLocation = GetActorLocation();
+	FVector ForwardDirection;
+
 	if (CurrentTarget == nullptr)
 	{
-		
+		ForwardDirection = GetActorForwardVector();
 	}
 	else
 	{
-		
+		//TODO: Test if this is the actual forward direction.
+		ForwardDirection = CurrentTarget->GetActorLocation() - CurrentLocation;
 	}
 
-	FVector CurrentLocation = GetActorLocation();
-	FVector TargetLocation = CurrentLocation + GetActorForwardVector() * ProjectileSpeed * DeltaTime;
+	FVector TargetLocation = CurrentLocation + ForwardDirection * ProjectileSpeed * DeltaTime;
 
 	SetActorLocation(TargetLocation);
 

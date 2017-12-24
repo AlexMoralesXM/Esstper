@@ -17,23 +17,23 @@ public:
 	// Sets default values for this actor's properties.
 	ALightningBolt();
 
+	// Travel speed of the projectile.
 	UPROPERTY(EditDefaultsOnly, Category = "Movement")
-		float ProjectileSpeed;
-
-	// Sets the target of the bolt projectile.
-	void SetBoltTarget(AActor* NewTarget);
+	float ProjectileSpeed;
 
 protected:
 	// Target of the lightning bolt.
 	AActor * CurrentTarget;
 
+	// Particle System component for trails.
 	UPROPERTY(EditAnywhere, Category = "Spell")
 	UParticleSystemComponent* BoltParticle;
 
 public:	
-	// Called every frame
+	// Updates the actor's location.
 	virtual void Tick(float DeltaTime) override;
 
-	
+	// Sets the target of the bolt projectile.
+	void SetBoltTarget(AActor* NewTarget);
 	
 };

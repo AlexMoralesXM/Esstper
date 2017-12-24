@@ -4,7 +4,6 @@
 #include "Particles/ParticleSystemComponent.h"
 
 
-// Sets default values
 ALightningBolt::ALightningBolt()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
@@ -15,13 +14,6 @@ ALightningBolt::ALightningBolt()
 	SetRootComponent(BoltParticle);
 }
 
-void ALightningBolt::SetBoltTarget(AActor* NewTarget)
-{
-	// Sets the current target to the new one.
-	CurrentTarget = NewTarget;
-}
-
-// Called every frame
 void ALightningBolt::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
@@ -42,3 +34,8 @@ void ALightningBolt::Tick(float DeltaTime)
 
 }
 
+void ALightningBolt::SetBoltTarget(AActor* NewTarget)
+{
+	// Sets the current target to the new one.
+	CurrentTarget = NewTarget;
+}

@@ -6,6 +6,8 @@
 #include "GameFramework/Actor.h"
 #include "SenseSphere.generated.h"
 
+class UParticleSystemComponent;
+
 UCLASS()
 class ESSTPER_API ASenseSphere : public AActor
 {
@@ -16,8 +18,9 @@ public:
 	ASenseSphere();
 
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+	// Particle System component for trails.
+	UPROPERTY(EditAnywhere, Category = "Spell")
+	UParticleSystemComponent* SphereParticle;
 
 public:	
 	// Called every frame
